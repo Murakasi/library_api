@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*$py.class
+*.pdb
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+# Віртуальне середовище
+venv/
+env/
+.venv/
+.env/
+.library_env/
+ENV/
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+db.sqlite3
+media/
+staticfiles/
+static_root/
+
+# Якщо використовуєш WhiteNoise чи collectstatic — краще не пушити сгенеровані файли
+#/static/
+#/media/
+
+# Кеші Django
+*.mo
+*.db
+*.sqlite3
+*.sqlite
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Системні
+.DS_Store
+Thumbs.db
+
+# Тестові звіти
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Docker (якщо використовуєш)
+*.pid
+*.seed
+*.pid.lock
+
+# Перемінні середовища (секрети)
+.env
+*.env
