@@ -20,7 +20,7 @@ class Book(models.Model):
     title = models.CharField(max_length=150, unique=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name="books")
     published_date = models.DateField()
-    page = models.SmallIntegerField(validators=[MinValueValidator(50), MaxValueValidator(1200)])
+    pages = models.SmallIntegerField(validators=[MinValueValidator(50), MaxValueValidator(1200)])
     
     def __str__(self):
         return self.title
@@ -28,6 +28,8 @@ class Book(models.Model):
     class Meta:
         db_table = "books"
         ordering = ['title', 'published_date']
+        verbose_name = 'Book'
+        verbose_name_plural = "Bookd"
     
 
 
