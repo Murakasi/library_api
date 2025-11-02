@@ -3,6 +3,9 @@ from rest_framework.validators import UniqueValidator
 from library.models import Author, Book
 
 class AuthorSerializer(serializers.ModelSerializer):
+    name = serializers.CharField(
+        validators=[UniqueValidator(queryset=Author.objects.all())]
+        )
     class Meta:
         model = Author
         fields = "__all__"
