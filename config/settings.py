@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "library.apps.LibraryConfig",
     "library_class.apps.LibraryClassConfig",
+    'library_generic.apps.LibraryGenericConfig',
 ]
 
 MIDDLEWARE = [
