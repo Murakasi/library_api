@@ -37,4 +37,5 @@ class BookSerializer(serializers.ModelSerializer):
         if value < 50:
             raise serializers.ValidationError("Book can't have less than50 pages")
         if value > 1200:
-            raise serializers.ValidationError("Book can't have mode 1200pages")
+            raise serializers.ValidationError("Book can't have mode 1200 pages")
+        return value
