@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "library.apps.LibraryConfig",
     "library_class.apps.LibraryClassConfig",
     'library_generic.apps.LibraryGenericConfig',
+    'library_setview.apps.LibraryGenericConfig',
 ]
 
 MIDDLEWARE = [
