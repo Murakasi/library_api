@@ -1,6 +1,8 @@
 from django.shortcuts import get_object_or_404
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from rest_framework.authentication import SessionAuthentication, TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from library.models import Author, Book
 from library.serializers import AuthorSerializer, BookSerializer
@@ -82,3 +84,12 @@ def books_detail(request, pk):
             {"delete": f"Book with id {pk} was deleted"},
             status=status.HTTP_204_NO_CONTENT
         )
+
+
+# --- Secrets Books ---
+
+@api_view(["GET"])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def get_secret(request):
+    return Response({"SECRET": "Only you can see this book"}, status=status.HTTP_200_OK)
